@@ -32,14 +32,14 @@ Antes de rodar os testes, você precisa ter o [K6](https://k6.io/docs/getting-st
    cd k6-load-tests
    
 Execute o teste com o seguinte comando:
-
-```k6 run load_tests.js --summary-export=summary.json
+```bash
+k6 run load_tests.js --summary-export=summary.json
 
 Este comando executará o teste de carga com 500 usuários virtuais (vus) por 5 minutos. Os resultados serão exportados em formato JSON (summary.json).
 
 Gere o relatório HTML com os resultados:
-
-```npx k6-reporter --input summary.json --output result.html
+```bash
+npx k6-reporter --input summary.json --output result.html
 
 Isso criará o arquivo result.html com o relatório em formato HTML.
 
