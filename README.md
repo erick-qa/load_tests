@@ -27,21 +27,20 @@ Antes de rodar os testes, você precisa ter o [K6](https://k6.io/docs/getting-st
 
 1. Clone este repositório para seu ambiente local:
 
-   ```bash
-   git clone https://github.com/seu-usuario/k6-load-tests.git
-   cd k6-load-tests
+   ```git clone https://github.com/seu-usuario/k6-load-tests.git
+   cd k6-load-tests```
+   
 Execute o teste com o seguinte comando:
 
-bash
-Copiar código
-k6 run load_tests.js --summary-export=summary.json
+
+`k6 run load_tests.js --summary-export=summary.json`
+
 Este comando executará o teste de carga com 500 usuários virtuais (vus) por 5 minutos. Os resultados serão exportados em formato JSON (summary.json).
 
-(Opcional) Gere o relatório HTML com os resultados:
+Gere o relatório HTML com os resultados:
 
-bash
-Copiar código
-npx k6-reporter --input summary.json --output result.html
+`npx k6-reporter --input summary.json --output result.html`
+
 Isso criará o arquivo result.html com o relatório em formato HTML.
 
 Como Rodar os Testes no GitHub Actions
