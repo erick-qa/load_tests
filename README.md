@@ -37,10 +37,15 @@ Execute o teste com o seguinte comando:
 ```k6 run load_tests.js --summary-export=summary.json
 Este comando executará o teste de carga com 500 usuários virtuais (vus) por 5 minutos. Os resultados serão exportados em formato JSON (summary.json).
 
+
+
 Gere o relatório HTML com os resultados:
-```bash
-npx k6-reporter --input summary.json --output result.html
-```
+
+```npx k6-reporter --input summary.json --output result.html
+
+
+
+
 Isso criará o arquivo result.html com o relatório em formato HTML.
 
 Como Rodar os Testes no GitHub Actions
