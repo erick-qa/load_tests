@@ -1,0 +1,43 @@
+name: Run K6 Load Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'load_tests.js'  # Executa quando o arquivo load_tests.js for alterado
+
+jobs:
+  run-k6-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Passo 1: Fazer checkout do código
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      # Passo 2: Instalar o K6
+      - name: Install K6
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo add-apt-repository -y ppa:k6io/k6
+          sudo apt-get update
+          sudo apt-get install k6
+
+      # Passo 3: Executar o teste K6
+      - name: Run K6 load tests
+        run: |
+          k6 run load_tests.js --summary-export=summary.json
+
+      # Passo 4: Gerar o relatório HTML com o K6 e salvar como artefato
+      - name: Generate HTML report
+        run: |
+          k6 run load_tests.js
+          
+      # Passo 5: Salvar o relatório HTML como artefato
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v3
+        with:
+          name: k6-report
+          path: result.html
