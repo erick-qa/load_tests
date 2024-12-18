@@ -1,9 +1,7 @@
 name: Run K6 Load Tests
 
 on:
-  pull_request:
-    branches:
-      - main  # Isso garante que o workflow seja executado quando um PR for aberto para a branch main
+  workflow_dispatch:
 
 jobs:
   run-k6-tests:
