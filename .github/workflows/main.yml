@@ -16,8 +16,10 @@ jobs:
       - name: Install K6
         run: |
           sudo apt-get update
-          sudo apt-get install -y nodejs npm
-          sudo npm install -g k6
+          sudo apt-get install -y wget
+          wget https://github.com/grafana/k6/releases/download/v0.42.0/k6-v0.42.0-linux-amd64.deb
+          sudo dpkg -i k6-v0.42.0-linux-amd64.deb
+          sudo apt-get install -f  # Corrigir possíveis dependências
 
       # Passo 3: Executar o teste K6
       - name: Run K6 load tests
