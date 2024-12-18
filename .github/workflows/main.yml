@@ -29,13 +29,9 @@ jobs:
           k6 run load_tests.js --summary-export=summary.json
 
       # Passo 4: Gerar o relatório HTML com o k6-reporter
-      - name: Generate HTML report
-        run: |
-          npx k6-reporter --input summary.json --output result.html
-
-      # Passo 5: Salvar o relatório HTML como artefato
       - name: Upload HTML report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: k6-report
           path: result.html
+
