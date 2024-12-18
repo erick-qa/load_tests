@@ -28,7 +28,6 @@ Antes de rodar os testes, você precisa ter o [K6](https://k6.io/docs/getting-st
 1. Clone este repositório para seu ambiente local:
 
    ```git clone https://github.com/seu-usuario/k6-load-tests.git```
-   ```cd k6-load-tests```
    
 Execute o teste com o seguinte comando:
 
