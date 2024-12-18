@@ -5,7 +5,6 @@ on:
     branches:
       - main  # Este workflow será disparado quando um PR for aberto/atualizado para a branch main
 
-
 jobs:
   run-k6-tests:
     runs-on: ubuntu-latest
@@ -13,7 +12,7 @@ jobs:
     steps:
       # Passo 1: Fazer checkout do código
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       # Passo 2: Instalar o K6
       - name: Install K6
@@ -24,13 +23,17 @@ jobs:
           sudo dpkg -i k6-v0.42.0-linux-amd64.deb
           sudo apt-get install -f  # Corrigir possíveis dependências
 
-      # Passo 3: Executar o teste K6 e gerar o relatório HTML
-      - name: Run K6 load tests and generate HTML report
+      # Passo 3: Executar o teste K6 e gerar o relatório em formato JSON
+      - name: Run K6 load tests
         run: |
           k6 run load_tests.js --summary-export=summary.json
-          k6 run load_tests.js --out html=result.html
 
-      # Passo 4: Salvar o relatório HTML como artefato
+      # Passo 4: Gerar o relatório HTML com o k6-reporter
+      - name: Generate HTML report
+        run: |
+          npx k6-reporter --input summary.json --output result.html
+
+      # Passo 5: Salvar o relatório HTML como artefato
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
         with:
