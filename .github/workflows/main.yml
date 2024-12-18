@@ -5,6 +5,7 @@ on:
     branches:
       - main  # Este workflow será disparado quando um PR for aberto/atualizado para a branch main
 
+
 jobs:
   run-k6-tests:
     runs-on: ubuntu-latest
