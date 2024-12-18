@@ -1,11 +1,7 @@
 name: Run K6 Load Tests
 
 on:
-  pull_request:
-    branches:
-      - main
-    paths:
-      - 'load_tests.js'  # Executa quando o arquivo load_tests.js for alterado
+  workflow_dispatch:
 
 jobs:
   run-k6-tests:
