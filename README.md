@@ -15,7 +15,6 @@ Este repositório inclui um workflow automatizado que executa os testes de carga
 5. **Upload do Relatório HTML**: O arquivo HTML gerado é carregado como um artefato do workflow para ser acessado após a execução.
 
 
-
 ## Objetivo
 
 O teste de carga foi implementado com os seguintes objetivos:
@@ -69,4 +68,5 @@ Execute o script de testes:
 `k6 run load_tests.js --summary-export=summary.json`
 
 Este comando executará o teste de carga com 500 usuários virtuais (vus) por 5 minutos. Os resultados serão exportados em formato JSON (summary.json).
+
 
