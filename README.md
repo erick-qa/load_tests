@@ -38,19 +38,17 @@ O teste de carga foi implementado com os seguintes objetivos:
 Antes de rodar os testes, você precisa ter o [K6](https://k6.io/docs/getting-started/) instalado em seu sistema.
 
 ## Como Funciona
-Disparo do Workflow:O workflow é disparado quando um Pull Request é feito na branch main.
-Execução dos Testes: O script load_tests.js é utilizado para realizar os testes de carga com o K6.
-Relatório de Resultados: Após os testes, um relatório de resumo em formato JSON é gerado, e um relatório em HTML é produzido utilizando o k6-reporter.
-Artefato: O relatório em HTML é carregado como artefato para visualização no GitHub Actions.
-Visualizando o Relatório
-
-Após a execução do workflow, você pode acessar o relatório HTML gerado como artefato na seção de Artefatos do seu workflow de pull request no GitHub. Isso fornece uma visualização detalhada dos resultados dos testes de carga realizados.
+**Disparo do Workflow:** O workflow é disparado quando um Pull Request é feito na branch main.
+**Execução dos Testes:** O script load_tests.js é utilizado para realizar os testes de carga com o K6.
+**Relatório de Resultados:** Após os testes, um relatório de resumo em formato JSON é gerado, e um relatório em HTML é produzido utilizando o k6-reporter.
+**Artefato:** O relatório em HTML é carregado como artefato para visualização no GitHub Actions.
+**Visualizando o Relatório:** Após a execução do workflow, você pode acessar o relatório HTML gerado como artefato na seção de Artefatos do seu workflow de pull request no GitHub. Isso fornece uma visualização detalhada dos resultados dos testes de carga realizados.
 
 ### Como Executar
 
 Clone este repositório para seu ambiente local:
 
-`git clone https://github.com/seu-usuario/k6-load-tests.git
+`git clone https://github.com/seu-usuario/k6-load-tests.git`
 
 Para rodar os testes de carga, siga os passos abaixo:
 
@@ -64,7 +62,7 @@ sudo apt-get install -f
 
 Execute o script de testes:
 
-`k6 run load_tests.js --summary-export=summary.json
+`k6 run load_tests.js --summary-export=summary.json`
 
 Este comando executará o teste de carga com 500 usuários virtuais (vus) por 5 minutos. Os resultados serão exportados em formato JSON (summary.json).
 
