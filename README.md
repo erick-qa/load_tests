@@ -39,16 +39,20 @@ Antes de rodar os testes, você precisa ter o [K6](https://k6.io/docs/getting-st
 
 ## Como Funciona
 **Disparo do Workflow:** O workflow é disparado quando um Pull Request é feito na branch main.
+
 **Execução dos Testes:** O script load_tests.js é utilizado para realizar os testes de carga com o K6.
+
 **Relatório de Resultados:** Após os testes, um relatório de resumo em formato JSON é gerado, e um relatório em HTML é produzido utilizando o k6-reporter.
+
 **Artefato:** O relatório em HTML é carregado como artefato para visualização no GitHub Actions.
+
 **Visualizando o Relatório:** Após a execução do workflow, você pode acessar o relatório HTML gerado como artefato na seção de Artefatos do seu workflow de pull request no GitHub. Isso fornece uma visualização detalhada dos resultados dos testes de carga realizados.
 
 ### Como Executar
 
 Clone este repositório para seu ambiente local:
 
-`git clone https://github.com/seu-usuario/k6-load-tests.git`
+`git clone https://github.com/erick-qa/load-tests.git`
 
 Para rodar os testes de carga, siga os passos abaixo:
 
